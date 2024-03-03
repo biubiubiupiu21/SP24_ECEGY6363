@@ -15,7 +15,7 @@ class MyTopo( Topo ):
       edgeSwitch = self.addSwitch('e{}'.format(i+1))
       self.addLink(edgeSwitch, coreSwitch1)
       self.addLink(edgeSwitch, coreSwitch2)
-      for j in range(n/2):
+      for j in range(n//2):
         server = self.addHost('h{}'.format(i*2+j+1))
         self.addLink(server, edgeSwitch)
 topos = { 'mytopo': ( lambda: MyTopo() ) }
